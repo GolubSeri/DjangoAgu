@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django blog</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <header>
+                <div class="nav-left">
+                    <h1><a href="{% url 'home' %}">Django blog</a></h1>
+                </div>
+                <div class="nav-right">
+                    <a href="{% url 'post_new' %}">+ New Blog Post</a>
+                </div>
+                <div>
+                    <h2>
+                        <a href="{% url 'custom_form' %}">Кастомная форма</a>
+                    </h2>
+                </div>
+            </header>
+            <div>
+                {% block content %}
+                {% endblock content %}
+            </div>
+
+            <div class="pagination">
+              <span>
+                {% if page_obj.has_previous %}
+                  <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+                <span>
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                  <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
+              </span>
+            </div>
+
+        </div>
+    </body>
+</html>

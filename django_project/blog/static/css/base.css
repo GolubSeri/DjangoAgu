@@ -1,0 +1,37 @@
+header h1 a {
+    color: red;
+}
+
+.post_entry{
+    border: 1px solid #e9e9e9;
+    max-width: 300px;
+    margin-top: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.post_title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.post_title h2 a{
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.post_description {
+    padding: 0 10px;
+}
+
+.post_description p{
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.pagination{
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+}
