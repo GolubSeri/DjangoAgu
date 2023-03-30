@@ -11,10 +11,10 @@
         <div>
             <header>
                 <div class="nav-left">
-                    <h1><a href="{% url 'home' %}">Django blog</a></h1>
+                    <h1><a href="{% url 'home' %}">Мой блог</a></h1>
                 </div>
                 <div class="nav-right">
-                    <a href="{% url 'post_new' %}">+ New Blog Post</a>
+                    <a href="{% url 'post_new' %}">Добавить пост</a>
                 </div>
                 <div>
                     <h2>
@@ -26,21 +26,6 @@
                 {% block content %}
                 {% endblock content %}
             </div>
-
-            <div class="pagination">
-              <span>
-                {% if page_obj.has_previous %}
-                  <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                {% endif %}
-                <span>
-                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                </span>
-                {% if page_obj.has_next %}
-                  <a href="?page={{ page_obj.next_page_number }}">Next</a>
-                {% endif %}
-              </span>
-            </div>
-
         </div>
     </body>
 </html>
